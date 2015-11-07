@@ -1,0 +1,25 @@
+{
+  "name": "dc-test",
+  "version": "0.0.1",
+  "author": "gblok",
+  "license": "MIT",
+  "description":"DesignContest test",
+  "dependencies": {
+    "bower": "latest",
+    "gulp": "latest",
+    "jade": "latest",
+    "riot": "latest",
+    "gulp-uglify": "latest",
+    "gulp-concat": "latest",
+    "gulp-less": "latest",
+    "gulp-util": "latest",
+    "gulp-debug": "latest",
+    "gulp-pleeease": "latest",
+    "gulp-riot": "latest",
+    "gulp-jade": "latest",
+    "main-bower-files": "latest"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
