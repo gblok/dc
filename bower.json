@@ -1,15 +1,18 @@
 {
   "name": "dc-test",
-  "description":"DesignContest test",
+  "description": "DesignContest test",
   "main": "",
-  "authors": ["gblok"],
+  "authors": [
+    "gblok"
+  ],
   "license": "MIT",
   "moduleType": [],
   "homepage": "dc.diz.in.ua",
   "private": true,
   "dependencies": {
-    "riot": "~2.2.4",
-    "zepto": "~1.1.6"
+    "riot": "",
+    "zepto": "",
+    "lunr.js": ""
   },
   "overrides": {
     "riot": {
@@ -20,6 +23,11 @@
     "zepto": {
       "main": [
         "zepto.js"
+      ]
+    },
+    "lunr.js": {
+      "main": [
+        "lunr.js"
       ]
     }
   }

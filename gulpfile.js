@@ -12,6 +12,7 @@ var bower = require('main-bower-files');
 
 var pleeease = require('gulp-pleeease');
 
+
 var riot = require('gulp-riot');
 var jade = require('gulp-jade');
 
@@ -25,10 +26,8 @@ var dir = {
     riot: 'src/riot/*.jade',
     scripts: [
         'src/js/lib.js',
-        'src/js/functions.js',
-        'src/js/api.js',
-        'src/js/riot-tags.js',
-        'src/js/riot-mount.js'
+        'src/js/tags.js',
+        'src/js/api.js'
     ]
 };
 
@@ -71,7 +70,7 @@ gulp.task('riot', function () {
         .src(dir.riot)
         .pipe(debug())
         .pipe(riot({compact: true, template: 'jade'}))
-        .pipe(concat('riot-tags.js'))
+        .pipe(concat('tags.js'))
         .pipe(gulp.dest(dir.js))
         .on('error', gutil.log);
 });
