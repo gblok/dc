@@ -1,15 +1,13 @@
-## DC Test
+# DC Test
 
-### Quick start
+## Quick start
+
 Clone the git repo  —  git clone https://github.com/gblok/dc-test.git
-mappings /public to /public_html
+
+Mappings /public to /public_html
 
 
 ###[Demo](http://dc.diz.in.ua)
-
-
-***
-
 
 
 ## Src description
