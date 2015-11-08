@@ -4,13 +4,13 @@
 
 Clone the git repo  —  git clone https://github.com/gblok/dc-test.git
 
-Mappings /public to /public_html
+Mappings `/public`  to  `/public_html`
 
 
 ###[Demo](http://dc.diz.in.ua)
 
 
-## Src description
+## SRC description
 
 ##### Build
 * task runner: [Gulp](https://github.com/gulpjs/gulp)
