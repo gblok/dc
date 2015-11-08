@@ -1,7 +1,6 @@
 
 riot.tag2('search-box', '<search-form class="search-form"></search-form><snippet-list snippets="{snippets}" class="snippet-list"></snippet-list>', '', 'class="search-box"', function(opts) {
     this.snippets = []
-
     var reduce = []
 
     var index = lunr(function () {
@@ -13,7 +12,6 @@ riot.tag2('search-box', '<search-form class="search-form"></search-form><snippet
     })
 
     this.init = function(){
-
         self = this
         $.ajax(
                 {
@@ -35,7 +33,6 @@ riot.tag2('search-box', '<search-form class="search-form"></search-form><snippet
                         });
                     }
                 });
-
     }.bind(this)
 
     this.search = function(q){
@@ -44,7 +41,6 @@ riot.tag2('search-box', '<search-form class="search-form"></search-form><snippet
     }.bind(this)
 
     this.response = function(data){
-
         var res = []
 
         data.map(function (data) {
@@ -54,7 +50,6 @@ riot.tag2('search-box', '<search-form class="search-form"></search-form><snippet
 
         this.snippets = res
         this.update()
-
     }.bind(this)
 
     this.init()

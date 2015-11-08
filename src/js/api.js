@@ -3,7 +3,7 @@ function cl($v) {
 }
 
 var searchBox = {
-    placeholder: 'Search on players',
+    placeholder: 'Search players',
     url: '/data/players.json',
     fields: [
         'name',

@@ -3,9 +3,7 @@ search-box(class='search-box')
     snippet-list(class='snippet-list' snippets='{ snippets }')
 
     script.
-
         this.snippets = []
-
         var reduce = []
 
         var index = lunr(function () {
@@ -17,7 +15,6 @@ search-box(class='search-box')
         })
 
         init(){
-
             self = this
             $.ajax(
                     {
@@ -39,20 +36,14 @@ search-box(class='search-box')
                             });
                         }
                     });
-
         }
-
-
 
         search(q){
             data = index.search(q)
             this.response(data)
         }
 
-
-
         response(data){
-
             var res = []
 
             data.map(function (data) {
@@ -62,7 +53,6 @@ search-box(class='search-box')
 
             this.snippets = res
             this.update()
-
         }
 
         this.init()
