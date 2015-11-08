@@ -1,18 +1,18 @@
 ## DC Test
 
 ### Quick start
-
 Clone the git repo  —  git clone https://github.com/gblok/dc-test.git
 mappings /public to /public_html
 
 
-***
-
 ###[Demo](http://dc.diz.in.ua)
 
+
 ***
 
-## Description
+
+
+## Src description
 
 ##### Build
 * task runner: [Gulp](https://github.com/gulpjs/gulp)
