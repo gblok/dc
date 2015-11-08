@@ -1,0 +1,158 @@
+/*  Responsive
+-------------------------------------------------- */
+
+//@breakMobile:  30rem;
+//@breakTablet:  48rem;
+//@breakDesktop: 62rem;
+//@breakLarge:   72rem;
+//@breakWide:    120px;
+
+@breakMobile: 480px;
+@breakTablet: 768px;
+@breakDesktop: 992px;
+@breakLarge: 1280px;
+@breakWide: 1920px;
+
+@breakMobileMax: (@breakTablet - 1);
+@breakTabletMax: (@breakDesktop - 1);
+@breakDesktopMax: (@breakLarge - 1);
+@breakLargeMax: (@breakWide - 1);
+
+@maxWidth : 60rem;
+
+@pure: ~'only screen and (max-width: @{breakMobile})';
+@mobile: ~'only screen and (min-width: @{breakMobile}) and (max-width: @{breakMobileMax})';
+@tablet: ~'only screen and (min-width: @{breakTablet}) and (max-width: @{breakTabletMax})';
+@desktop: ~'only screen and (min-width: @{breakDesktop}) and (max-width: @{breakDesktopMax})';
+@large: ~'only screen and (min-width: @{breakLarge}) and (max-width: @{breakLargeMax})';
+@wide: ~'only screen and (min-width: @{breakWide})';
+
+@alongMobile: ~'only screen and (max-width: @{breakMobileMax})';
+@alongTablet: ~'only screen and (max-width: @{breakTabletMax})';
+@alongDesktop: ~'only screen and (max-width: @{breakDesktopMax})';
+@alongLarge: ~'only screen and (max-width: @{breakLargeMax})';
+
+@largestPure: ~'only screen and (min-width: @{breakMobile})';
+@largestMobile: ~'only screen and (min-width: @{breakTablet})';
+@largestTablet: ~'only screen and (min-width: @{breakDesktop})';
+@largestDesktop: ~'only screen and (min-width: @{breakLarge})';
+
+/*  Typography
+-------------------------------------------------- */
+
+//@import url('//fonts.googleapis.com/css?family=Roboto&subset=latin,cyrillic');
+
+//@import url('//fonts.googleapis.com/css?family=PT+Sans+Narrow&subset=latin,cyrillic');
+
+@pageFont:  'PT Sans', Verdana, Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
+@monoFont: Monaco, Menlo, Consolas, 'Courier New', monospace;
+
+@headerFont:@pageFont;
+@formFont: @pageFont;
+@buttonFont: @pageFont;
+
+/*-------------------
+      Base Sizes
+--------------------*/
+
+@pageBackground: #fff;
+@textColor: #444;
+@fontSmoothing: antialiased;
+
+@fontSize : 1rem;
+
+
+
+//GOLDEN RATIO   1.61803399
+//26px
+@f: 1.625;
+@lineHeight: @f;
+
+@cols: 12;
+@pad: 1rem;
+@gap: 1rem;
+
+
+
+
+
+
+//12, 14, 16, 20, and 34
+/*******************************
+  Page Heading
+*******************************/
+
+@headerFontWeight : normal;
+//@headerLineHeight : 1.3em;
+//@headerMargin: 1rem;
+@headerColor: #444;
+
+//@h1               : 2rem;
+//@h2               : 1.714rem;
+//@h3               : 1.28rem;
+//@h4               : 1.071rem;
+//@h5               : 1rem;
+//@h6               : 1em;
+
+//@h1               : 2.25em;
+//@h2               : 2em;
+//@h3               : 1.75em;
+//@h4               : 1.5em;
+//@h5               : 1.25em;
+//@h6               : 1em;
+
+//34
+//20
+//16
+//14
+//12
+
+@h1               : 2.4rem;
+@h2               : 2.2rem;
+@h3               : 2rem;
+@h4               : 1.8rem;
+@h5               : 1.6rem;
+@h6               : 1.4rem;
+
+/*******************************
+      Paragraph
+*******************************/
+
+@paragraphMargin     : 0 0 1rem;
+@paragraphLineHeight : @lineHeight;
+
+/*******************************
+       Links
+*******************************/
+
+@linkColor           : #33A7E1;
+@linkUnderline       : none;
+@linkHoverColor      : #3F51B5;
+
+@borderRadius: 3px;
+
+@red: #F44237;
+@green: #94C746;
+@blue: #479ccf;
+@gray: #aaa;
+
+@path: 'src/';
+@pathSvgDist: '/assets/svg/';
+@pathSvg: '@{path}svg/';
+@pathImg: '@{path}img/';
+@pathPng: '@{path}png/';
+
+/*******************************
+          Transition
+*******************************/
+
+@defaultEasing: ease;
+
+@transitionDefaultEasing: @defaultEasing;
+@transitionDefaultFill: both;
+@transitionDefaultDuration: 300ms;
+
+@use3DAcceleration: translateZ(0);
+@backfaceVisibility: hidden;
+
+

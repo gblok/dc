@@ -1,0 +1,38 @@
+.logo {
+
+  display: block;
+  position: relative;
+
+  width: 235px;
+  height: 42px;
+
+  font-size: 10px;
+  line-height: 12px;
+  color: currentColor;
+  cursor: default;
+
+  .data-uri('logo.png');
+
+  > .slogan,
+  > .since,
+  > .company {
+    .user-select;
+    position: absolute;
+    cursor: inherit;
+  }
+
+  > .slogan {
+    bottom: -1px;
+    right: 16px;
+  }
+
+  > .since {
+    top: -6px;
+    right: 16px;
+  }
+
+  > .company {
+    visibility: hidden;
+  }
+
+}

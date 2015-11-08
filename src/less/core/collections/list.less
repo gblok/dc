@@ -1,0 +1,48 @@
+ul, ol {
+  li {
+
+    list-style-position: outside;
+    padding-left: @pad;
+    margin-left: @pad;
+
+    li {
+      list-style: outside circle;
+    }
+  }
+}
+
+ul > li {
+  list-style-type: disc;
+}
+
+ul li li {
+  list-style-type: circle;
+}
+
+ol > li {
+  list-style-type: decimal;
+}
+
+ol li li {
+  list-style-type: decimal;
+}
+
+.list,
+.menu{
+
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+  list-style-position: outside;
+
+  > .item {
+
+    padding: 0;
+    margin: 0;
+
+    list-style: inherit;
+    color: inherit;
+  }
+
+}

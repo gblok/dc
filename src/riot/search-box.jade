@@ -1,0 +1,87 @@
+search-box(class='search-box')
+    search-form(class='search-form')
+    snippet-list(class='snippet-list' snippets='{ snippets }')
+
+    script.
+
+        this.snippets = []
+
+        var reduce = []
+
+        var index = lunr(function () {
+            self = this
+            $.each(opts.fields, function (i, v) {
+                self.field(v);
+            });
+            self.ref(opts.ref)
+        })
+
+        init(){
+
+            self = this
+            $.ajax(
+                    {
+                        traditional: false,
+                        url: opts.url,
+                        type: 'get',
+                        dataType: 'json',
+                        async: false,
+                        cache: false,
+                        success: function (json) {
+
+                            reduce = json.reduce(function (acc, document) {
+                                acc[document.id] = document
+                                return acc
+                            }, {})
+
+                            $.each(json, function (i, v) {
+                                index.add(v);
+                            });
+                        }
+                    });
+
+        }
+
+
+
+        search(q){
+            data = index.search(q)
+            this.response(data)
+        }
+
+
+
+        response(data){
+
+            var res = []
+
+            data.map(function (data) {
+                res.push(reduce[data.ref])
+                return res;
+            })
+
+            this.snippets = res
+            this.update()
+
+        }
+
+        this.init()
+
+
+search-form(onkeyup='{ request }')
+    input(class='input' type='search' required='required' name='q' placeholder='{ this.parent.opts.placeholder }')
+    script.
+        request(){
+            this.parent.search(this.q.value)
+        }
+
+snippet-list
+    snippet(class='snippet' each='{ opts.snippets }' no-reorder)
+
+snippet
+    div(class='title').
+        { this.name }
+    div(class='info').
+        { this.position }
+    div(class='info').
+        { this.nationality }

@@ -1,0 +1,159 @@
+
+.section {
+  padding-top: @pad;
+  padding-bottom: @pad;
+}
+
+.container {
+  display: block;
+  margin: auto;
+
+  padding-left: 2rem;
+  padding-right: 2rem;
+  max-width: @maxWidth;
+
+}
+
+//Pure
+.row,
+.menu.row,
+.list.row {
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: stretch;
+
+  //align-content: flex-start;
+  //position: relative;
+
+  margin-left: -@gap;
+  margin-right: -@gap;
+
+  > .col,
+  > .item {
+
+    padding-left: @gap;
+    padding-right: @gap;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+}
+
+@media @pure{
+
+  .row,
+  .menu.row,
+  .list.row {
+    > .col,
+    > .item {
+      text-align: center;
+      display: block;
+      width: 100%;
+    }
+  }
+
+}
+
+@media @largestPure{
+  .generate-columns(@cols, ~'_m');
+}
+
+@media @largestMobile{
+  .generate-columns(@cols, ~'_');
+}
+
+.colWidth(@col:1) {
+  @colWidth: unit(((100/@cols) * @col), %);
+}
+
+.generate-columns(@n, @pre, @i: 1) when (@i =< @n) {
+
+  .colWidth(@i);
+
+  .row {
+
+    > .@{pre}@{i},
+    > .@{pre}@{i} {
+
+      width: @colWidth;
+    }
+
+  }
+
+  .row.@{pre}@{i} {
+    > .col,
+    > .item {
+      width: @colWidth;
+    }
+  }
+
+  .generate-columns(@n, @pre, (@i + 1));
+}
+
+/*.col.pull_1 {
+  @w: ((100/@cols) * 4);
+  margin-left: unit(@w, %);
+}*/
+
+
+.center {
+  text-align: center
+}
+
+.hidden {
+  display: none;
+}
+
+//vertical align
+.row.top {
+  align-items: flex-start;
+
+  > .col,
+  > .item {
+    vertical-align: top;
+  }
+}
+
+.row.bottom {
+  align-items: flex-end;
+
+  > .col,
+  > .item {
+    vertical-align: bottom;
+  }
+}
+
+.row.aligned {
+
+  align-items: center;
+  vertical-align: middle;
+
+  > .col,
+  > .item {
+    vertical-align: middle;
+  }
+}
+
+//horizontal align
+.row.centred {
+  justify-content: center;
+  align-items: center;
+}
+
+.row.justify {
+  justify-content: space-between;
+  text-align: justify;
+
+  > .col,
+  > .item {
+    text-align: left;
+  }
+}
+
+.row.around {
+  justify-content: space-around;
+}
+
+

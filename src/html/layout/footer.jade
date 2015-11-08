@@ -1,0 +1,7 @@
+footer(id='footer' class='section dark')
+    div(class='container')
+        ul(class='menu row centred')
+            -
+            each href, title in navFooter
+                li(class='item')
+                    a(class='link' href=href) #{title}
