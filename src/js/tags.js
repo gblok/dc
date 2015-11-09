@@ -23,7 +23,7 @@ riot.tag2('search-box', '<search-form class="search-form"></search-form><snippet
                     type: 'get',
                     dataType: 'json',
                     async: true,
-                    cache: false,
+                    cache: true,
                     success: function (json) {
 
                         reduce = json.reduce(function (acc, document) {
