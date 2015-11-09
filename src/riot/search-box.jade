@@ -3,26 +3,30 @@ search-box(class='search-box')
     snippet-list(class='snippet-list' snippets='{ snippets }')
 
     script.
+
         this.snippets = []
+
         var reduce = []
 
         var index = lunr(function () {
-            self = this
+            var self = this
+
             $.each(opts.fields, function (i, v) {
-                self.field(v);
-            });
+                self.field(v)
+            })
+
             self.ref(opts.ref)
         })
 
         init(){
-            self = this
+
             $.ajax(
                     {
                         traditional: false,
                         url: opts.url,
                         type: 'get',
                         dataType: 'json',
-                        async: false,
+                        async: true,
                         cache: false,
                         success: function (json) {
 
@@ -32,14 +36,14 @@ search-box(class='search-box')
                             }, {})
 
                             $.each(json, function (i, v) {
-                                index.add(v);
-                            });
+                                index.add(v)
+                            })
                         }
-                    });
+                    })
         }
 
         search(q){
-            data = index.search(q)
+            var data = index.search(q)
             this.response(data)
         }
 
@@ -48,7 +52,7 @@ search-box(class='search-box')
 
             data.map(function (data) {
                 res.push(reduce[data.ref])
-                return res;
+                return res
             })
 
             this.snippets = res

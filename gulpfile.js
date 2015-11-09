@@ -39,7 +39,7 @@ gulp.task('less', function () {
         .src(dir.less)
         .pipe(debug())
         .pipe(less({paths: [path.join(__dirname, 'less', 'includes')]}))
-        .pipe(pleeease({browsers: ['last 1 versions', 'Android 2.3'], cascade: false}))
+        .pipe(pleeease({browsers: ['last 1 versions'], cascade: false}))
         .pipe(gulp.dest(dir.assets))
         .on('error', gutil.log);
 });

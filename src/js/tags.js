@@ -1,25 +1,28 @@
 
 riot.tag2('search-box', '<search-form class="search-form"></search-form><snippet-list snippets="{snippets}" class="snippet-list"></snippet-list>', '', 'class="search-box"', function(opts) {
     this.snippets = []
+
     var reduce = []
 
     var index = lunr(function () {
-        self = this
+        var self = this
+
         $.each(opts.fields, function (i, v) {
-            self.field(v);
-        });
+            self.field(v)
+        })
+
         self.ref(opts.ref)
     })
 
     this.init = function(){
-        self = this
+
         $.ajax(
                 {
                     traditional: false,
                     url: opts.url,
                     type: 'get',
                     dataType: 'json',
-                    async: false,
+                    async: true,
                     cache: false,
                     success: function (json) {
 
@@ -29,14 +32,14 @@ riot.tag2('search-box', '<search-form class="search-form"></search-form><snippet
                         }, {})
 
                         $.each(json, function (i, v) {
-                            index.add(v);
-                        });
+                            index.add(v)
+                        })
                     }
-                });
+                })
     }.bind(this)
 
     this.search = function(q){
-        data = index.search(q)
+        var data = index.search(q)
         this.response(data)
     }.bind(this)
 
@@ -45,7 +48,7 @@ riot.tag2('search-box', '<search-form class="search-form"></search-form><snippet
 
         data.map(function (data) {
             res.push(reduce[data.ref])
-            return res;
+            return res
         })
 
         this.snippets = res
