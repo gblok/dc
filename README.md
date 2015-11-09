@@ -2,7 +2,7 @@
 
 ## Quick start
 
-Clone the git repo  —  git clone https://github.com/gblok/dc-test.git
+Clone the git repo  —  `git clone https://github.com/gblok/dc-test.git`
 
 Mappings `/public`  to  `/public_html`
 
