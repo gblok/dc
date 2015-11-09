@@ -33,7 +33,7 @@ Mappings `/public`  to  `/public_html`
 * lib: [Riot.js](https://github.com/riot/riot)
 * template: [Jade](https://github.com/jadejs/jade)
 * src: /src/riot
-* config:/src/js/api.js
+* config: /src/js/api.js
 * task: `gulp riot-js`
  
 ##### Full-Text Search
