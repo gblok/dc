@@ -26,7 +26,7 @@ Mappings `/public`  to  `/public_html`
 ##### CSS
 * pre-processor: Less
 * src: /src/less
-* config:/src/less/all.less
+* config: /src/less/all.less
 * task: `gulp less`
 
 ##### Flux component
